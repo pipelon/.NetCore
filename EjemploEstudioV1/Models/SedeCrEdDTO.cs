@@ -16,7 +16,7 @@ namespace EjemploEstudioV1.Models
         public string Direccion { get; set; }
         [Required(ErrorMessage = "Este campo es requerido")] //Validación por atributo con mensaje personalizado
         public string Telefono { get; set; }
-        [Required(ErrorMessage = "Este campo es requerido")] //Validación por atributo con mensaje personalizado
+        [NotZeroRequired] //Validación por atributo con mensaje personalizado
         public int EmpresaId { get; set; }
     }
 }

@@ -8195,11 +8195,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\NetCore\\ProyectosPracticaEstudio\\EjemploEstudioV1\\EjemploEstudioV1\\EjemploEstudioV1.csproj",
+      "projectUniqueName": "D:\\NetCore\\ProyectosPracticaEstudio\\EjmNetCoreV1\\EjemploEstudioV1\\EjemploEstudioV1.csproj",
       "projectName": "EjemploEstudioV1",
-      "projectPath": "D:\\NetCore\\ProyectosPracticaEstudio\\EjemploEstudioV1\\EjemploEstudioV1\\EjemploEstudioV1.csproj",
+      "projectPath": "D:\\NetCore\\ProyectosPracticaEstudio\\EjmNetCoreV1\\EjemploEstudioV1\\EjemploEstudioV1.csproj",
       "packagesPath": "C:\\Users\\fecheverri\\.nuget\\packages\\",
-      "outputPath": "D:\\NetCore\\ProyectosPracticaEstudio\\EjemploEstudioV1\\EjemploEstudioV1\\obj\\",
+      "outputPath": "D:\\NetCore\\ProyectosPracticaEstudio\\EjmNetCoreV1\\EjemploEstudioV1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

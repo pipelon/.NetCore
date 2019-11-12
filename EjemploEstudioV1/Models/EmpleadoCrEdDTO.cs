@@ -19,11 +19,11 @@ namespace EjemploEstudioV1.Models
         [Required(ErrorMessage = "Este campo es requerido")]
         [EmailAddress]
         public string Email { get; set; }
-        [Required(ErrorMessage = "Este campo es requerido")]
+        [NotZeroRequired]
         public decimal Salario { get; set; }
         [Required(ErrorMessage = "Este campo es requerido")]
-        public bool Activo { get; set; }
-        [Required(ErrorMessage = "Este campo es requerido")]
+        public bool? Activo { get; set; }
+        [NotZeroRequired]
         public int SedeId { get; set; }
     }
 }
