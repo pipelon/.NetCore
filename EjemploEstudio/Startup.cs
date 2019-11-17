@@ -75,11 +75,14 @@ namespace EjemploEstudio
                     Encoding.UTF8.GetBytes(Configuration["jwt:key"])),
                     ClockSkew = TimeSpan.Zero
                  });
+
+            //Servicio para crear documentación del Web Api Se puede usar Swagger            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-        {
+        {            
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

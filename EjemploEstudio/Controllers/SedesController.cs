@@ -26,7 +26,7 @@ namespace EjemploEstudio.Controllers
         }
 
         // GET: api/Sedes
-        [HttpGet]
+        [HttpGet(Name = "Sedes")]
         public async Task<ActionResult<IEnumerable<SedeDTO>>> GetSedes()
         {
             var sedes = await _context.Sedes.Include(x => x.Empresa).ToListAsync();
@@ -50,7 +50,7 @@ namespace EjemploEstudio.Controllers
         // PUT: api/Sedes/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
-        [HttpPut("{id}")]
+        [HttpPut("{id}", Name = "EditarSede")]
         public async Task<IActionResult> PutSede(int id, [FromBody] SedeCrEdDTO sedeEd)
         {
             var sede = _mapper.Map<Sede>(sedeEd);
@@ -77,7 +77,7 @@ namespace EjemploEstudio.Controllers
         // POST: api/Sedes
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
-        [HttpPost]
+        [HttpPost(Name = "CrearSede")]
         public async Task<ActionResult> PostSede([FromBody] SedeCrEdDTO sedeCr)
         {
             var sede = _mapper.Map<Sede>(sedeCr);
@@ -88,7 +88,7 @@ namespace EjemploEstudio.Controllers
         }
 
         // DELETE: api/Sedes/5
-        [HttpDelete("{id}")]
+        [HttpDelete("{id}", Name = "BorrarSede")]
         public async Task<ActionResult<Sede>> DeleteSede(int id)
         {
             var sede = await _context.Sedes.FindAsync(id);

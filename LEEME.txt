@@ -17,3 +17,5 @@ Empleados
 10. Seguridad con JWT y Bearer Authentication implementada
 11. Uso de Roles y Usuarios.
 12. Apertura de CORS
+
+13. Paginación de recursos en Empresas

@@ -26,10 +26,14 @@ namespace EjemploEstudio.Controllers
         }
 
         // GET: api/Empresas
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<EmpresaDTO>>> GetEmpresas()       
+        [HttpGet(Name = "Empresas")]
+        public async Task<ActionResult<IEnumerable<EmpresaDTO>>> GetEmpresas(int numeroPagina = 1, int cantidadRegs = 10)       
         {
-            var empresas = await _context.Empresas.Include(x => x.Sedes).ToListAsync();
+            var empresas = await _context.Empresas
+                .Skip(cantidadRegs * (numeroPagina - 1))
+                .Take(cantidadRegs)
+                .Include(x => x.Sedes)
+                .ToListAsync();
             return _mapper.Map<List<EmpresaDTO>>(empresas);
         }
 
@@ -50,7 +54,7 @@ namespace EjemploEstudio.Controllers
         // POST: api/Empresas
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
-        [HttpPost]
+        [HttpPost(Name = "CrearEmpresa")]
         public async Task<ActionResult> PostEmpresa([FromBody] EmpresaCrEdDTO empresaCr)
         {
             var empresa = _mapper.Map<Empresa>(empresaCr);
@@ -63,7 +67,7 @@ namespace EjemploEstudio.Controllers
         // PUT: api/Empresas/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
-        [HttpPut("{id}")]
+        [HttpPut("{id}", Name = "EditarEmpresa")]
         public async Task<IActionResult> PutEmpresa(int id, [FromBody] EmpresaCrEdDTO empresaEd)
         {
 
@@ -89,7 +93,7 @@ namespace EjemploEstudio.Controllers
         }        
 
         // DELETE: api/Empresas/5
-        [HttpDelete("{id}")]
+        [HttpDelete("{id}", Name = "BorrarEmpresa")]
         public async Task<ActionResult<Empresa>> DeleteEmpresa(int id)
         {
             var empresa = await _context.Empresas.FindAsync(id);
