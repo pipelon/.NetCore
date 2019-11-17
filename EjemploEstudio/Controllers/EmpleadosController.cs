@@ -9,11 +9,15 @@ using EjemploEstudio.Contexts;
 using EjemploEstudio.Entities;
 using AutoMapper;
 using EjemploEstudio.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace EjemploEstudio.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    //Decorador para pedir autenticacion en todo el controlador
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class EmpleadosController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
@@ -32,12 +36,13 @@ namespace EjemploEstudio.Controllers
             var empleados = await _context.Empleados.Include(x => x.Sede).ToListAsync();
             return _mapper.Map<List<EmpleadoDTO>>(empleados);
         }
+                
 
         // GET: api/Empleados/5
         [HttpGet("{id}", Name = "ObtenerEmpleado")]
         public async Task<ActionResult<EmpleadoDTO>> GetEmpleado(int id)
         {
-            var empleado = await _context.Sedes.FindAsync(id);
+            var empleado = await _context.Empleados.FindAsync(id);
 
             if (empleado == null)
             {
@@ -51,6 +56,8 @@ namespace EjemploEstudio.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPut("{id}")]
+        //Decorador para solicitar JWT Autentication en una accion con Rol
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
         public async Task<IActionResult> PutEmpleado(int id, [FromBody] EmpleadoCrEdDTO empEd)
         {
             var empleado = _mapper.Map<Empleado>(empEd);
@@ -78,6 +85,7 @@ namespace EjemploEstudio.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPost]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
         public async Task<ActionResult> PostEmpleado([FromBody] EmpleadoCrEdDTO empCr)
         {
             var empleado = _mapper.Map<Empleado>(empCr);
@@ -89,6 +97,7 @@ namespace EjemploEstudio.Controllers
 
         // DELETE: api/Empleados/5
         [HttpDelete("{id}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
         public async Task<ActionResult<Empleado>> DeleteEmpleado(int id)
         {
             var empleado = await _context.Empleados.FindAsync(id);

@@ -13,3 +13,7 @@ Empleados
 7. Controlador asincrono
 8. Referencia cilica
 9. AutoMapper ultima versión
+
+10. Seguridad con JWT y Bearer Authentication implementada
+11. Uso de Roles y Usuarios.
+12. Apertura de CORS

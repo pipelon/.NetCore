@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\NetCore\\ProyectosPracticaEstudio\\EjmNetCoreV1\\EjemploEstudio\\EjemploEstudio.csproj": {}
+    "D:\\NetCore\\ProyectosPracticaEstudio\\EjmNetCore\\EjemploEstudio\\EjemploEstudio.csproj": {}
   },
   "projects": {
-    "D:\\NetCore\\ProyectosPracticaEstudio\\EjmNetCoreV1\\EjemploEstudio\\EjemploEstudio.csproj": {
+    "D:\\NetCore\\ProyectosPracticaEstudio\\EjmNetCore\\EjemploEstudio\\EjemploEstudio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\NetCore\\ProyectosPracticaEstudio\\EjmNetCoreV1\\EjemploEstudio\\EjemploEstudio.csproj",
+        "projectUniqueName": "D:\\NetCore\\ProyectosPracticaEstudio\\EjmNetCore\\EjemploEstudio\\EjemploEstudio.csproj",
         "projectName": "EjemploEstudio",
-        "projectPath": "D:\\NetCore\\ProyectosPracticaEstudio\\EjmNetCoreV1\\EjemploEstudio\\EjemploEstudio.csproj",
+        "projectPath": "D:\\NetCore\\ProyectosPracticaEstudio\\EjmNetCore\\EjemploEstudio\\EjemploEstudio.csproj",
         "packagesPath": "C:\\Users\\fecheverri\\.nuget\\packages\\",
-        "outputPath": "D:\\NetCore\\ProyectosPracticaEstudio\\EjmNetCoreV1\\EjemploEstudio\\obj\\",
+        "outputPath": "D:\\NetCore\\ProyectosPracticaEstudio\\EjmNetCore\\EjemploEstudio\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -44,6 +44,14 @@
             "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[7.0.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.0.0, )"
             },
             "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
               "target": "Package",
