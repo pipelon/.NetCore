@@ -1,4 +1,4 @@
-Este proyecto tiene:
+﻿Este proyecto tiene:
 
 Empresas
 Sedes
@@ -19,3 +19,5 @@ Empleados
 12. Apertura de CORS
 
 13. Paginación de recursos en Empresas
+
+14. Pruebas unitarias de un método simple
