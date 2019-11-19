@@ -92,14 +92,14 @@ namespace EjemploEstudio
 
             //Middleware de Cors permitiendo todos los origenes, metodos y cabeceras
             //app.UseCors(builder => builder.WithOrigins("*").WithMethods("*").WithHeaders("*"));
-            app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
-
-            app.UseRouting();
-
-            app.UseAuthorization();
-            //Middelware para autenticación JWT Bearer
+            app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());            
+			
+			//Middelware para autenticación JWT Bearer
             app.UseAuthentication();
-
+            app.UseAuthorization();
+			
+			app.UseRouting();
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
